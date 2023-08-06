@@ -10,8 +10,8 @@ struct world createWorld() {
   // Initialize viewpoint
   ret.camera.position.x = 0;
   ret.camera.position.y = 0;
-  ret.camera.height = 0;
-  ret.camera.width = 0;
+  ret.camera.dimension.h = 10;
+  ret.camera.dimension.w = 10;
 
   ret.squares.count = 0;
 

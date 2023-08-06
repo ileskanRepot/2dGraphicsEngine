@@ -27,9 +27,11 @@ struct squares {
 };
 
 struct camera {
+  // Center point of camera
   struct pos position;
-  float width;
-  float height;
+
+  // Camera's dimensions. Should be odd numbers
+  struct dim dimension
 };
 
 struct world {
