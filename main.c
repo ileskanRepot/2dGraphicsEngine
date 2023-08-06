@@ -17,6 +17,7 @@ int main() {
   dim.h = 10;
 
   addSquare(dim, pos, &map);
+  addSquare(dim, pos, &map);
 
   listCubes(&map);
   // printf("%d\n", map.squares.count);
