@@ -1,6 +1,12 @@
 #ifndef STRUCTS_H
 #define STRUCTS_H
 
+struct color {
+  int r;
+  int g;
+  int b;
+};
+
 struct pos {
   // X
   float x;
@@ -31,7 +37,7 @@ struct camera {
   struct pos position;
 
   // Camera's dimensions. Should be odd numbers
-  struct dim dimension
+  struct dim dimension;
 };
 
 struct world {
