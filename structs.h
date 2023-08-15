@@ -1,7 +1,7 @@
 #ifndef STRUCTS_H
 #define STRUCTS_H
 
-struct color {
+struct col {
   int r;
   int g;
   int b;
@@ -23,6 +23,7 @@ struct dim {
 };
 
 struct square {
+  struct col color;
   struct dim dimension;
   struct pos position;
 };
