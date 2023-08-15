@@ -4,25 +4,24 @@
 #include "logic.h"
 #include "render.h"
 
-int render(struct world map) { return 0; }
-
 int main() {
   struct world map = createWorld();
 
   struct pos pos;
-  pos.x = 10;
-  pos.y = 10;
+  pos.x = 0;
+  pos.y = 0;
   struct dim dim;
-  dim.w = 10;
-  dim.h = 10;
+  dim.w = 2;
+  dim.h = 2;
 
-  addSquare(dim, pos, &map);
   addSquare(dim, pos, &map);
 
   listCubes(&map);
   // printf("%d\n", map.squares.count);
 
-  removeAllSquares(map);
+  renderWorldSimple(&map);
+
+  removeAllSquares(&map);
 
   return 0;
 }
