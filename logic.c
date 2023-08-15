@@ -10,17 +10,17 @@ struct world createWorld() {
   // Initialize viewpoint
   ret.camera.position.x = 0;
   ret.camera.position.y = 0;
-  ret.camera.dimension.h = 10;
-  ret.camera.dimension.w = 10;
+  ret.camera.dimension.h = 9;
+  ret.camera.dimension.w = 9;
 
   ret.squares.count = 0;
 
   return ret;
 }
 
-int removeAllSquares(struct world map) {
-  free(map.squares.arr);
-  map.squares.count = 0;
+int removeAllSquares(struct world* map) {
+  free(map->squares.arr);
+  map->squares.count = 0;
   return 0;
 }
 
