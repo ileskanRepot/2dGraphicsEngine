@@ -2,6 +2,7 @@
 
 #include <stdlib.h>
 
+#include "randomFuncs.h"
 #include "structs.h"
 
 struct world createWorld() {
@@ -32,19 +33,31 @@ int move(struct world* map, char dir) {
 
   switch (dir) {
     case 'w':
-      map->camera.position.y -= 1;
+      if (!isSquareInPixel(map->camera.position.x, map->camera.position.y - 1,
+                           map)) {
+        map->camera.position.y -= 1;
+      }
       break;
 
     case 'r':
-      map->camera.position.y += 1;
+      if (!isSquareInPixel(map->camera.position.x, map->camera.position.y + 1,
+                           map)) {
+        map->camera.position.y += 1;
+      }
       break;
 
     case 'a':
-      map->camera.position.x -= 1;
+      if (!isSquareInPixel(map->camera.position.x - 1, map->camera.position.y,
+                           map)) {
+        map->camera.position.x -= 1;
+      }
       break;
 
     case 's':
-      map->camera.position.x += 1;
+      if (!isSquareInPixel(map->camera.position.x + 1, map->camera.position.y,
+                           map)) {
+        map->camera.position.x += 1;
+      }
       break;
 
     default:

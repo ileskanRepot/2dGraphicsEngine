@@ -1,6 +1,6 @@
 FLAGS = -g -Wall
 CC = gcc
-INPUT = main.c logic.c render.c
+INPUT = main.c logic.c render.c randomFuncs.c
 OUTPUT = main
 
 all: $(INPUT)
