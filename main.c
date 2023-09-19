@@ -12,15 +12,28 @@ int main() {
   pos.y = 0;
   struct dim dim;
   dim.w = 2;
-  dim.h = 2;
+  dim.h = 5;
 
   addSquare(dim, pos, &map);
 
   listCubes(&map);
   // printf("%d\n", map.squares.count);
 
-  renderWorldSimple(&map);
+  int running = 1;
+  char cur = 0;
 
+  while (running) {
+    system("stty cooked");
+    renderWorldSimple(&map);
+    printf("Enter input (w,a,r,s,q)");
+    system("stty raw");
+    cur = getchar();
+
+    running = move(&map, cur);
+
+    // printf("WEE: %d", cur);
+  };
+  printf("\n");
   removeAllSquares(&map);
 
   return 0;

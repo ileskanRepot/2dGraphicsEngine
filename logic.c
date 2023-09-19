@@ -24,6 +24,35 @@ int removeAllSquares(struct world* map) {
   return 0;
 }
 
+int move(struct world* map, char dir) {
+  if (dir == 'q') {
+    system("stty cooked");
+    return 0;
+  }
+
+  switch (dir) {
+    case 'w':
+      map->camera.position.y -= 1;
+      break;
+
+    case 'r':
+      map->camera.position.y += 1;
+      break;
+
+    case 'a':
+      map->camera.position.x -= 1;
+      break;
+
+    case 's':
+      map->camera.position.x += 1;
+      break;
+
+    default:
+      break;
+  }
+  return 1;
+}
+
 int addSquare(struct dim dimension, struct pos position, struct world* map) {
   int count = map->squares.count;
   if (map->squares.arr == 0) {

@@ -2,19 +2,8 @@
 
 #include <stdio.h>
 
+#include "randomFuncs.h"
 #include "structs.h"
-
-int isSquareInPixel(int x, int y, struct world *map) {
-  for (int ii = 0; ii < map->squares.count; ii++) {
-    struct dim dim = map->squares.arr[ii].dimension;
-    struct pos pos = map->squares.arr[ii].position;
-    if ((pos.x <= x && x < pos.x + dim.w) &&
-        (pos.y <= y && y < pos.y + dim.h)) {
-      return 1;
-    }
-  }
-  return 0;
-}
 
 int renderWorldSimple(struct world *map) {
   int squareCount = map->squares.count;
@@ -30,7 +19,10 @@ int renderWorldSimple(struct world *map) {
   for (int hh = -(playerDim.h / 2); hh <= (int)(playerDim.h / 2); hh++) {
     printf("%2d", hh);
     for (int ww = -(playerDim.w / 2); ww <= (int)(playerDim.h / 2); ww++) {
-      if (isSquareInPixel(playerPos.x + ww, playerPos.y + hh, map)) {
+      if (hh == 0 && ww == 0) {
+        printf("@@");
+
+      } else if (isSquareInPixel(playerPos.x + ww, playerPos.y + hh, map)) {
         printf("##");
       } else {
         printf("  ");
