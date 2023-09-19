@@ -7,14 +7,16 @@
 int main() {
   struct world map = createWorld();
 
-  struct pos pos;
-  pos.x = 0;
-  pos.y = 0;
-  struct dim dim;
-  dim.w = 2;
-  dim.h = 5;
+  // struct pos pos;
+  // pos.x = 0;
+  // pos.y = 0;
+  // struct dim dim;
+  // dim.w = 2;
+  // dim.h = 5;
 
-  addSquare(dim, pos, &map);
+  // addSquare(dim, pos, &map);
+
+  addFloor(&map);
 
   listCubes(&map);
   // printf("%d\n", map.squares.count);

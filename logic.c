@@ -1,3 +1,4 @@
+
 #include "logic.h"
 
 #include <stdlib.h>
@@ -11,8 +12,8 @@ struct world createWorld() {
   // Initialize viewpoint
   ret.camera.position.x = 0;
   ret.camera.position.y = 0;
-  ret.camera.dimension.h = 9;
-  ret.camera.dimension.w = 9;
+  ret.camera.dimension.h = 15;
+  ret.camera.dimension.w = 15;
 
   ret.squares.count = 0;
 
@@ -84,5 +85,19 @@ int addSquare(struct dim dimension, struct pos position, struct world* map) {
 
   map->squares.count++;
 
+  return 0;
+}
+
+int addFloor(struct world* map) {
+  int floorWidht = 20;
+
+  struct pos pos;
+  pos.x = -floorWidht / 2;
+  pos.y = 1;
+  struct dim dim;
+  dim.w = floorWidht;
+  dim.h = 1;
+
+  addSquare(dim, pos, map);
   return 0;
 }
